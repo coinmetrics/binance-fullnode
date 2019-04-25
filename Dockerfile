@@ -10,7 +10,9 @@ RUN set -ex; \
 
 ARG VERSION
 
-RUN curl -Lo /usr/bin/bnbchaind https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/linux/bnbchaind
+RUN set -ex; \
+	curl -Lo /usr/bin/bnbchaind https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/linux/bnbchaind; \
+	chmod +x /usr/bin/bnbchaind
 
 RUN useradd -m -u 1000 -s /bin/bash runner
 USER runner
