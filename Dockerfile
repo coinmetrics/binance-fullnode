@@ -21,7 +21,7 @@ RUN set -ex; \
 	mkdir -p ~/.bnbchaind/config; \
 	curl -Lo ~/.bnbchaind/config/app.toml     https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/config/app.toml;     \
 	curl -Lo ~/.bnbchaind/config/config.toml  https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/config/config.toml;  \
-	curl -Lo ~/.bnbchaind/config/genesis.json https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/config/genesis.toml; \
+	curl -Lo ~/.bnbchaind/config/genesis.json https://raw.githubusercontent.com/binance-chain/node-binary/master/fullnode/prod/${VERSION}/config/genesis.json; \
 	true
 
 ENTRYPOINT ["bnbchaind"]
