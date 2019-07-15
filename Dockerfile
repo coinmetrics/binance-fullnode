@@ -19,9 +19,9 @@ USER runner
 
 RUN set -ex; \
 	mkdir -p ~/.bnbchaind/config; \
-	curl -Lo ~/.bnbchaind/config/app.toml     https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/app.toml;     \
-	curl -Lo ~/.bnbchaind/config/config.toml  https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/config.toml;  \
-	curl -Lo ~/.bnbchaind/config/genesis.json https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/genesis.json; \
+	curl -Lo ~/.bnbchaind/config/app.toml     https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/app.toml?raw=true;     \
+	curl -Lo ~/.bnbchaind/config/config.toml  https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/config.toml?raw=true;  \
+	curl -Lo ~/.bnbchaind/config/genesis.json https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/genesis.json?raw=true; \
 	true
 
 ENTRYPOINT ["bnbchaind"]
