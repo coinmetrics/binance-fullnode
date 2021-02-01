@@ -22,6 +22,7 @@ RUN set -ex; \
 	curl -fLo ~/.bnbchaind/config/app.toml     https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/app.toml?raw=true;     \
 	curl -fLo ~/.bnbchaind/config/config.toml  https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/config.toml?raw=true;  \
 	curl -fLo ~/.bnbchaind/config/genesis.json https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/genesis.json?raw=true; \
-	true
+	sed -i 's/logToConsole.*/logToConsole = true/g' ~/.bnbchaind/config/app.toml
+
 
 ENTRYPOINT ["bnbchaind"]
