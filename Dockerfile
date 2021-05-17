@@ -24,5 +24,8 @@ RUN set -ex; \
 	curl -fLo ~/.bnbchaind/config/genesis.json https://github.com/binance-chain/node-binary/blob/master/fullnode/prod/${VERSION}/config/genesis.json?raw=true; \
 	sed -i 's/logToConsole.*/logToConsole = true/g' ~/.bnbchaind/config/app.toml; \
 	sed -i 's/open_files_cache_capacity.*/open_files_cache_capacity = 4096/g' ~/.bnbchaind/config/config.toml; \
+	sed -i 's/fast_sync.*/fast_sync = false/g' ~/.bnbchaind/config/config.toml; \
+	sed -i 's/state_sync_reactor.*/state_sync_reactor = false/g' ~/.bnbchaind/config/config.toml; \
+	sed -i 's/state_sync_height.*/state_sync_height = -1/g' ~/.bnbchaind/config/config.toml;
 
 ENTRYPOINT ["bnbchaind"]
